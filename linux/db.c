@@ -15,7 +15,7 @@ void connect_db()
     printf("\033[1;33m");
     printf("正在连接数据库(Connecting to database)...\n");
     printf("\033[0m");
-    //sleep(2);
+    sleep(2);
 
     if (rc != SQLITE_OK)
     {
@@ -37,7 +37,7 @@ void create_table()
     printf("\033[1;33m");
     printf("创建数据表(Creating Table)...\n");
     printf("\033[0m");
-    //sleep(2);
+    sleep(2);
     const char* createTableSQL1 = "CREATE TABLE IF NOT EXISTS Users (id INTEGER PRIMARY KEY, name TEXT , password TEXT);";
     const char* createTableSQL2 = "CREATE TABLE IF NOT EXISTS Employee (id INTEGER PRIMARY KEY, emp_no TEXT,name TEXT ,dob TEXT,address TEXT, contact_num TEXT, position TEXT,department TEXT,salary TEXT);";
     rc = sqlite3_exec(db, createTableSQL1, 0, 0, NULL);
